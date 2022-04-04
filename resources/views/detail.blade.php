@@ -25,7 +25,8 @@
         }
 
         li a:hover {
-        background-color: #111;
+            background-color: #04AA6D;
+            color: white;
         }
 
         .container-card{
@@ -85,17 +86,17 @@
 
     <div class="container-card">
         <div class="card">
-            <img class="img-hotel" src="https://blog-media.lifepal.co.id/wp-content/uploads/2018/08/10134030/5-Hotel-Bintang-5-Ini-Milik-Orang.jpg" alt="">
+            <img class="img-hotel" src="{{ asset('image/padmahotelkamar.jpg') }}" alt="">
             <h3> About The Hotel </h3>
             <p> {{$hotels->sinopsis}}</p>
             <h3> Facility</h3>
-            <img class="img-wifi" src="https://cdn-icons.flaticon.com/png/512/2859/premium/2859724.png?token=exp=1648604139~hmac=ca0cf6b53c3ab0a73d72383fb6d0df25">
-            <img class="img-wifi" src="https://cdn-icons-png.flaticon.com/512/985/985505.png">
-            <img class="img-wifi" src="https://cdn-icons.flaticon.com/png/512/3130/premium/3130222.png?token=exp=1648604537~hmac=89fe5884a48a2d234c6ae7684f99d238">
+            <img class="img-wifi" src="{{ asset('image/wifi.png') }}">
+            <img class="img-wifi" src="{{ asset('image/swimming.png') }}">
+            <img class="img-wifi" src="{{ asset('image/eat.png') }}">
         
             <div class="card-one"><center>
                 <h1>Start Booking</h1>
-                <h2> $50/night </h2>
+                <h2> {{ $hotels->harga }} $/Night </h2>
                 <input type="submit">
 
             </div></center>

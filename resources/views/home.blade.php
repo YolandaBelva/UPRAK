@@ -4,29 +4,36 @@
     </head>
 
     <style>
-        ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-        }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
 
-        li {
-        float: left;
-        }
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-        li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        }
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-        li a:hover {
-        background-color: #111;
-        }
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+* {
+  box-sizing: border-box;
+}
 
         .hotel{
             margin-left: 2vw;
@@ -54,29 +61,93 @@
             top: 99%;
             }
 
+    .card {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+  height: 350px;
+}
+.card-header img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height:50px;
+}
 
+.tag {
+  background: #cccccc;
+  border-radius: 50px;
+  font-size: 12px;
+  margin: 0;
+  color: #fff;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.tag-teal {
+  background-color: #47bcd4;
+}
+.tag-purple {
+  background-color: #5e76bf;
+}
+.tag-pink {
+  background-color: #cd5b9f;
+}
+
+.card-body p {
+  font-size: 13px;
+  margin: 0 0 40px;
+}
+.container {
+  display: flex;
+  margin-left:30px;
+  flex-wrap: wrap;
+  
+}
     </style>
 
-
     <body>
-    <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#news">Hotels</a></li>
-    </ul>
-    <div class="container-hotels">
-    @foreach ($hotels as $hotel)
-    <div class="hotel">
-       <a href="/detail/{{$hotel->id}}"> <img class="hotel-img" src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2021/03/16/2fe50a8d-d997-41e5-b6de-bc0901ec8228-1615888512764-f7a27d7aa200152dd1633e71db070da7.jpg" alt=""></a>
-        <p class="nh">{{ $hotel->nama_hotel }}</p>
-        <p>{{ $hotel->lokasi }}</p>
-        <p>{{ $hotel->harga }}</p>
+    <div class="topnav">
+    <a href="/landing" class="logo" style="float:left">Hotelio</a>
+  <a href="" class="active">Hotels</a>
+  <a href="/landing">Home</a>
+</div>
+
+@foreach ($hotels as $hotel)
+<div class="container">
+<div class="card">
+    <div class="card-header">
+     <a href="/detail/{{$hotel->id}}"> <img src="{{ asset('image/padma-hotel-bandung.jpg') }}" alt="rover" /></a>
     </div>
-    
-    @endforeach
+    <div class="card-body">
+      <span class="tag tag-teal">{{ $hotel->lokasi }}</span>
+      <h4>
+      {{ $hotel->nama_hotel }}
+      </h4>
+      <p>
+        <b><font size="5px">{{ $hotel->harga }}</font></b>$/Night
+      </p>
+      <div class="user">
+        
+        <div class="user-info">
+        </div>
 
-
+      </div>
+    </div>
+  </div>
+  @endforeach
 </div>
          <a href="/add"> <img class="circle" src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png"> </a>
-
+</div>
 </body>
 </html>

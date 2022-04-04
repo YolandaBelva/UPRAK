@@ -15,8 +15,17 @@ use App\Http\Controllers\HotelController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/landing', function () {
     return view('landing');
+});
+Route::get('/add', function () {
+    return view('add');
+});
+Route::get('/detail', function () {
+    return view('detail');
+});
+Route::get('/home', function () {
+    return view('home');
 });
 
 Route::resource('home', HotelController::class);

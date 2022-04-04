@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -49,7 +47,8 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: #04AA6D;
+  color: white;
 }
 
 textarea {
@@ -82,8 +81,8 @@ input[type=button], input[type=submit], input[type=reset] {
 
 <body>
 <ul>
-    <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#news">Hotels</a></li>
+    <li><a class="active" href="/landing">Home</a></li>
+    <li><a href="/home">Hotels</a></li>
 </ul>
 <center><h3>Add Hotels</h3></center>
 
@@ -91,23 +90,23 @@ input[type=button], input[type=submit], input[type=reset] {
 <form action="/home" method="POST">
 @csrf 
     <label for="fname">Hotel Name</label>
-    <input type="text" id="fname" name="nama_hotel" placeholder="Your name..">
+    <input type="text" id="fname" name="nama_hotel" placeholder="Name Hotel..">
 
     <label for="lname">Location</label>
-    <input type="text" id="lname" name="lokasi" placeholder="Your last name..">
+    <input type="text" id="lname" name="lokasi" placeholder="Location..">
 
     <label for="lname">Price per Night</label>
-    <input type="text" id="lname" name="harga" placeholder="Your last name..">
+    <input type="text" id="lname" name="harga" placeholder="Price per Night..">
 
     <label for="lname">Image</label><br>
-    <input type="file" id="lname" name="image" placeholder="Your last name.."><br>
+    <input type="file" id="lname" name="image" placeholder="Input image.."><br>
 
     <br><label for="lname">Facilitate</label>
-    <input type="text" id="lname" name="fasilitas" placeholder="Your last name..">
+    <input type="text" id="lname" name="fasilitas" placeholder="Facilitate..">
     
 
     <br><label for="lname">Synopsis</label>
-    <textarea name="sinopsis">Some text...</textarea>
+    <textarea name="sinopsis"></textarea>
   
     <input type="submit">
   </form>

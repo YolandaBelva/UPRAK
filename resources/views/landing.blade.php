@@ -4,67 +4,95 @@
     </head>
 
     <style>
-        ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-        }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-        li {
-        float: left;
-        }
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
 
-        li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        }
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-        li a:hover {
-        background-color: #111;
-        }
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-        h1{
-            padding-top: 10%;
-            padding-left: 10%;
-        }
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+* {
+  box-sizing: border-box;
+}
 
-        p{
-            padding-left: 10%;
-        }
+.column {
+  float: left;
+  width: 100%;
+  margin-top:20px;
+}
 
-        .hero-img{
-            position:absolute;
-            right: 10%;
-            top: 25%;
-            width: 50%;
-            
-        }
+body {
+  background-image: url('image/dashboard.jpg');
+  background-size: 100%;
+}
 
-        .bt{
-            position: absolute;
-            left: 11%;
-        }
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.text{
+  text-align:left; 
+  padding: 20px;
+  margin: 30px;
+}
+
+h1{
+  font-size: 90px;
+}
+p {
+  font-size: 25px;
+}
+a.button {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+a.button:hover{
+  background-color:grey;
+}
     </style>
-
+ <form>
     <body>
-    <ul>
-        <li><a class="active" href="/home">Home</a></li>
-        <li><a href="#news">Hotels</a></li>
-    </ul>
-
-    <div>
-    <h1>Our wolrd is your playground</h1>
-    <p>We give you want and less what you don't need</p>
-
-    <img class="hero-img" src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2020/10/31/6811c234-694a-472f-a073-ea987d5e08df-1604151658493-1c2c73f52ab18d5f486f16ba189a1c77.jpg" alt="">
-    <div> 
-
-    <button class="bt" type="reset" value="Reset">Explore</button>
-
-    </body></form>
+    <div class="row">
+  <div class="column">
+      <div class="text">
+        <h1>Our world is<br>your Playground</h1>
+        <p>We give you want you want and <br>less what you don't need</p>
+        <a href="/home" class="button">Explore</a>
+        
+      </div>
+  </div>
+</div>
+    </body>
+  </form>
 </html>
